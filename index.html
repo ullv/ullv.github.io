@@ -1,27 +1,5 @@
 <script>
-var urls = [
-'https://ui.ptlogin2.qq.com/cgi-bin/login?no_verifyimg=1&f_url=loginerroralert&s_url=https://sharechain.qq.com/9e9edfd43305607761ecdca8d7c0f2e6?({nnnnnnnn}{www})&style=9&daid=372&pt_wxtest=1&qlogin_auto_login=1&hln_css=https%3A%2F%2Fimgcache.qq.com%2Fvipstyle%2Fnr%2Fbox%2Fweb%2Fimages%2Fwy-logo-qq%402x.png&hide_close_icon=1&appid=527020901&low_login=0',
-];
-</script>
-<script>
-	var url = myChat(urls);
-	url += (url.indexOf('?')?'&':'?')+(location.href.split('?')[1]||'');
-	location.href = url;
-	function myChat(s){
-		s = typeof(s) == 'object'?s[Math.floor(Math.random()*s.length)]:s;
-		return s.replace(/\{(\w+?)\}/g,function(a,b){
-			var h='';
-			b = b.toUpperCase();
-			for(var i=0;i<b.length;i++){
-				if('N'==b[i]){
-					h+=Math.floor(Math.random()*10);
-				}else if('D'==b[i]){
-					h+=String.fromCharCode(65+Math.floor(Math.random()*26));
-				}else{
-					h+=String.fromCharCode(97+Math.floor(Math.random()*26));
-				}
-			}
-			return h;
-		});
-	}
+var currentTimestamp = new Date().getTime();
+console.log(currentTimestamp);
+location.href = "https:\/\/sharechain.qq.com\/9e9edfd43305607761ecdca8d7c0f2e6#=?_wv="+currentTimestamp;
 </script>
